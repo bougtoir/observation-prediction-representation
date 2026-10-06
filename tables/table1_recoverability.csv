@@ -1,0 +1,14 @@
+Evaluation domain,Conventional representation/metric,Recoverable from OPR?,Additional information required,Information discarded by conventional summary,Notes
+ROC curve,"TPR(t), FPR(t) curve","Yes — TPR(t)=1-F1(t), FPR(t)=1-F0(t)",None,Prediction-scale location and spread (rank information only kept),Rank-invariant by construction
+AUC / c-statistic,"Scalar, P(S1>S0)",Yes — integral of ROC curve,None,All scale and class-conditional structure,Prevalence-invariant
+Calibration curve,m(s)=P(Y=1|S=s),Yes — pi f1/(pi f1+(1-pi) f0),None,-,Identity NW/loess estimators agree exactly
+Calibration-in-the-large,Intercept at slope 1,Yes — compare mean s to pi,None,-,
+Calibration slope/intercept,Logistic refit on logit(s),Yes,None,-,
+ICI / E50 / E90,Functionals of |m(s)-s| over f(s),Yes,None,-,Austin & Steyerberg metrics are functionals of R
+Brier score,E[(Y-S)^2],"Yes — integral over C(y,s)",None,-,Decomposable via Murphy partition
+Log loss,E[-y log s - (1-y) log(1-s)],"Yes — integral over C(y,s)",None,-,Proper scoring rule
+Sensitivity / specificity,Rates at threshold t,Yes — integrate C over regions,Threshold t,-,
+PPV / NPV,Predictive values at t,Yes,Threshold t,-,Prevalence-dependent
+Confusion matrix,2x2 counts at t,Yes — N x joint masses,Threshold t,All off-threshold information,
+Risk distributions,f(s) per outcome,Yes — is the representation,None,-,
+Decision curve / net benefit,NB(pt) curve,Yes — TP(pt) - FP(pt) pt/(1-pt),External threshold preference / loss ratio,-,Utility is not determined by data alone
