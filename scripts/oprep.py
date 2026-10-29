@@ -101,6 +101,11 @@ class DensityOPR:
         o = np.minimum((1 - self.pi) * self.f0, self.pi * self.f1)
         return o, trapezoid(o, self.grid)
 
+    def kappa(self, t):
+        """Cohen's kappa at threshold t: agreement computed only after
+        the classification rule S>=t is applied."""
+        return kappa_from_confusion(self.confusion(t))
+
 
 class EmpiricalOPR:
     """Finite-sample OPR estimated from (y, s) data.
@@ -213,6 +218,11 @@ class EmpiricalOPR:
         c = self.confusion(pt)
         return c["TP"] - c["FP"] * pt / (1 - pt)
 
+    def kappa(self, t):
+        """Cohen's kappa at threshold t: agreement computed only after
+        the classification rule S>=t is applied."""
+        return kappa_from_confusion(self.confusion(t))
+
     def calib_m(self, grid, bandwidth=0.4):
         """m(s) = pi f1/(pi f1 + (1-pi) f0) with NW kernel estimates of
         the weighted class densities. Algebraically identical to the
@@ -239,6 +249,37 @@ class EmpiricalOPR:
 # ----------------------------------------------------------------- #
 # Monotone-transformation utilities (ROC-invariance demonstrations)
 # ----------------------------------------------------------------- #
+
+def kappa_from_confusion(c):
+    """Cohen's kappa from a joint-probability confusion matrix
+    dict (as returned by *.confusion(t)).
+
+        p_o = TP + TN          (observed agreement)
+        q   = TP + FP          (predicted-positive rate)
+        pi  = TP + FN          (prevalence)
+        p_e = pi q + (1-pi)(1-q)  (expected chance agreement)
+        kappa = (p_o - p_e) / (1 - p_e)
+    """
+    p_o = c["TP"] + c["TN"]
+    q = c["TP"] + c["FP"]
+    pi = c["TP"] + c["FN"]
+    p_e = pi * q + (1 - pi) * (1 - q)
+    if 1 - p_e <= 0:
+        return np.nan
+    return (p_o - p_e) / (1 - p_e)
+
+
+def compute_kappa_at_threshold(y_true, score, threshold):
+    """Direct sample kappa at one threshold."""
+    e = EmpiricalOPR(y_true, score)
+    return kappa_from_confusion(e.confusion(threshold))
+
+
+def compute_kappa_curve(y_true, score, thresholds):
+    """kappa(t) evaluated on a grid of thresholds."""
+    e = EmpiricalOPR(y_true, score)
+    return np.array([e.kappa(t) for t in thresholds])
+
 
 def g_transform(s, k):
     """g(s) = s^k / (s^k + (1-s)^k): strictly increasing for k>0.

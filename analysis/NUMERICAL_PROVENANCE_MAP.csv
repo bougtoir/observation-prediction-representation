@@ -1,0 +1,224 @@
+manuscript_location,result_key,canonical_file,canonical_value,rendered_value,status,context
+SiM:line7,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,30,VERIFIED,"plied to 71,518 hospital encounters for 30-day diabetes readmission, the represent"
+SiM:line7,realdata.auc.M1_logistic,analysis/canonical_results.json,0.612546,0.613,VERIFIED,e representation reveals identical AUC (0.613) but divergent calibration slope (1.07 
+SiM:line7,realdata.calib_slope.M1_logistic,analysis/canonical_results.json,1.06515,1.07,VERIFIED,0.613) but divergent calibration slope (1.07 vs 0.67) and net benefit between rank-e
+SiM:line7,realdata.auc.M4_gbm,analysis/canonical_results.json,0.65058,0.67,VERIFIED,ut divergent calibration slope (1.07 vs 0.67) and net benefit between rank-equivalen
+SiM:line21,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,30,VERIFIED,udy. Section 6 applies the framework to 30-day hospital readmission. Section 7 ske
+SiM:line25,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,2.1,VERIFIED," an observation–prediction problem  ### 2.1 Notation  Let $Y \{0,1\}$ denote a bina"
+SiM:line29,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,2.2,VERIFIED,"t)=P(S  t  Y=y)= _0^t f_y(s)\,ds$.  ### 2.2 Proposed representation  The observatio"
+SiM:line35,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,3.5,VERIFIED,"under transport is transparent (Section 3.5, Proposition 7). The equivalent margina"
+SiM:line35,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,3.2,VERIFIED,s step away and is discussed in Section 3.2. Figure 1 schematizes the layer structu
+SiM:line37,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,2.3,VERIFIED,rd by projection and never upward.  ### 2.3 Position relative to the ROC curve  The
+SiM:line77,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,5.2,VERIFIED," rescales the score for $k  1$ (Section 5.2; Fig. 2). More generally, the ROC const"
+SiM:line79,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,5.4,VERIFIED,esentation rather than a refit (Section 5.4){moons2012}{debray2015}.  Table 1 summa
+SiM:line85,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,4.1,VERIFIED," visualization from finite samples  ### 4.1 Estimators  For data $(y_i,s_i)$, three"
+SiM:line87,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,5.5,VERIFIED,timators of $R$ are compared in Section 5.5:  *Empirical (ECDF) form.* $  F_y(t)=n_
+SiM:line97,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,4.2,VERIFIED,used{harrell2015}{steyerberg2019}.  ### 4.2 Visualization: the Prediction Comb  We 
+SiM:line105,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,4.3,VERIFIED, what the ROC projection discards.  ### 4.3 Local overlap  The function $O(s)= \{(1
+SiM:line109,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,4.4,VERIFIED,e ambiguity concentrates (Fig. 5).  ### 4.4 Computational complexity  All derived q
+SiM:line115,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,5.1,VERIFIED,not speed.  ## 5. Simulation study  ### 5.1 Design  Ten scenarios were simulated (S
+SiM:line119,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,5.2,VERIFIED,"are in the reproducibility bundle.  ### 5.2 Identical ROC, different calibration  S"
+SiM:line121,realdata.spec.M1_logistic@0.1,analysis/canonical_results.json,0.776625,0.80,VERIFIED,"ws a well-calibrated logistic model ($ =0.80$, Brier $0.169$) and applies the strict"
+SiM:line121,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.169,VERIFIED,"brated logistic model ($ =0.80$, Brier $0.169$) and applies the strictly increasing d"
+SiM:line121,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.196,VERIFIED,"{-3}$), but the Brier score worsens to $0.196$ and the calibration curve departs from"
+SiM:line123,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,5.3,VERIFIED,"ical counterpart of Proposition 6.  ### 5.3 Same AUC, different location of class o"
+SiM:line125,realdata.spec.M4_gbm@0.1,analysis/canonical_results.json,0.734924,0.72,VERIFIED,"nstructs two models with matched AUC ($ 0.72$): model 1 concentrates $f_0,f_1$ overl"
+SiM:line127,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,5.4,VERIFIED,ion; the aggregate metrics do not.  ### 5.4 Prevalence and transport  Scenario F ho
+SiM:line129,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.20,VERIFIED,"\}$ fixed while $ $ varies over $\{0.05,0.20,0.50\}$: AUC is invariant (0.917) while"
+SiM:line129,realdata.sens.M4_gbm@0.1,analysis/canonical_results.json,0.480403,0.50,VERIFIED,"ixed while $ $ varies over $\{0.05,0.20,0.50\}$: AUC is invariant (0.917) while PPV,"
+SiM:line129,realdata.spec.M2_distorted@0.05,analysis/canonical_results.json,0.941384,0.917,VERIFIED,"$\{0.05,0.20,0.50\}$: AUC is invariant (0.917) while PPV, NPV, net benefit, and the j"
+SiM:line129,realdata.spec.M1_logistic@0.1,analysis/canonical_results.json,0.776625,0.80,VERIFIED,k population: ranking is preserved (AUC 0.80 to 0.81) while calibration degrades (Br
+SiM:line129,realdata.spec.M1_logistic@0.1,analysis/canonical_results.json,0.776625,0.81,VERIFIED,tion: ranking is preserved (AUC 0.80 to 0.81) while calibration degrades (Brier 0.16
+SiM:line129,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.168,VERIFIED,"0.81) while calibration degrades (Brier 0.168 to 0.189; Fig. 6, center). The conditio"
+SiM:line129,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.189,VERIFIED,"le calibration degrades (Brier 0.168 to 0.189; Fig. 6, center). The conditional-param"
+SiM:line131,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,5.5,VERIFIED,-conditional densities themselves.  ### 5.5 Narrow clinically important threshold r
+SiM:line133,realdata.spec.M2_distorted@0.05,analysis/canonical_results.json,0.941384,0.92,VERIFIED,ls with similar global performance (AUC 0.92 vs 0.95) but materially different behav
+SiM:line133,realdata.sens.M1_logistic@0.05,analysis/canonical_results.json,0.989936,0.95,VERIFIED,similar global performance (AUC 0.92 vs 0.95) but materially different behavior with
+SiM:line133,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,0.30,VERIFIED," a clinically relevant threshold band $[0.30,0.45]$ (Fig. 6, right): net benefit wit"
+SiM:line133,realdata.calib_intercept.M4_gbm,analysis/canonical_results.json,0.40495,0.45,VERIFIED,"inically relevant threshold band $[0.30,0.45]$ (Fig. 6, right): net benefit within t"
+SiM:line135,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,5.6,VERIFIED,ployment threshold will be chosen.  ### 5.6 Remaining scenarios and finite-sample b
+SiM:line139,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,30,VERIFIED,ds nothing.  ## 6. Medical application: 30-day hospital readmission  We applied th
+SiM:line141,realdata.n_encounters,analysis/canonical_results.json,101766,"101,766",VERIFIED,"tals dataset (UCI ML Repository ID 296; 101,766 inpatient encounters 1999–2008){strack2"
+SiM:line141,realdata.calib_slope.M2_distorted,analysis/canonical_results.json,0.66572,71,VERIFIED," to the first encounter per patient ($n=71{,}518$), the binary outcome was early r"
+SiM:line141,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,30,VERIFIED,ry outcome was early readmission within 30 days (prevalence 8.8%). On a stratified
+SiM:line141,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,8.8,VERIFIED," readmission within 30 days (prevalence 8.8%). On a stratified 70/30 split, four pr"
+SiM:line141,realdata.auc.M4_gbm,analysis/canonical_results.json,0.65058,70,VERIFIED,"days (prevalence 8.8%). On a stratified 70/30 split, four prespecified models were"
+SiM:line141,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,30,VERIFIED,"s (prevalence 8.8%). On a stratified 70/30 split, four prespecified models were co"
+SiM:line143,realdata.auc.M1_logistic,analysis/canonical_results.json,0.612546,0.613,VERIFIED,on.  M1 and M2 share the identical AUC (0.613) yet diverge completely on the predicti
+SiM:line143,realdata.auc.M4_gbm,analysis/canonical_results.json,0.65058,0.67,VERIFIED,"ig. 8): M2's calibration slope drops to 0.67, its scores compress toward zero, and i"
+SiM:line143,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.040,VERIFIED,"sible readmission thresholds collapses (0.040 to 0.009 at $p_t=0.05$, bootstrap 95% C"
+SiM:line143,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.009,VERIFIED,"dmission thresholds collapses (0.040 to 0.009 at $p_t=0.05$, bootstrap 95% CI for the"
+SiM:line143,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.05,VERIFIED,"holds collapses (0.040 to 0.009 at $p_t=0.05$, bootstrap 95% CI for the difference $"
+SiM:line143,realdata.sens.M1_logistic@0.05,analysis/canonical_results.json,0.989936,95,VERIFIED,"0.040 to 0.009 at $p_t=0.05$, bootstrap 95% CI for the difference $[0.027,0.035]$;"
+SiM:line143,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.027,VERIFIED,", bootstrap 95% CI for the difference $[0.027,0.035]$; Fig. 9). The mirrored display "
+SiM:line143,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.035,VERIFIED,"strap 95% CI for the difference $[0.027,0.035]$; Fig. 9). The mirrored display shows "
+SiM:line143,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.15,VERIFIED,": $f_0$ and $f_1$ are squashed into $[0,0.15]$ while the calibration curve $m(s)$ li"
+SiM:line143,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.10,VERIFIED,al—patients assigned distorted score $s=0.10$ experience observed event rates near 0
+SiM:line143,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.15,VERIFIED,"0$ experience observed event rates near 0.15. The miscalibration is diffuse, not loc"
+SiM:line143,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.000,VERIFIED,"ppens—the recalibration fits $ \,P(Y=1)=0.000+0.625  (p_2)$ with $1/k=0.625$, and M3 "
+SiM:line143,realdata.auc.M1_logistic,analysis/canonical_results.json,0.612546,0.625,VERIFIED,"the recalibration fits $ \,P(Y=1)=0.000+0.625  (p_2)$ with $1/k=0.625$, and M3 become"
+SiM:line143,realdata.auc.M1_logistic,analysis/canonical_results.json,0.612546,0.625,VERIFIED," \,P(Y=1)=0.000+0.625  (p_2)$ with $1/k=0.625$, and M3 becomes numerically almost ide"
+SiM:line143,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.014,VERIFIED,numerically almost identical to M1 (ICI 0.014 vs M2's 0.060; calibration slope 1.065 
+SiM:line143,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,0.060,VERIFIED,most identical to M1 (ICI 0.014 vs M2's 0.060; calibration slope 1.065 vs 1.065; Brie
+SiM:line143,realdata.calib_slope.M1_logistic,analysis/canonical_results.json,1.06515,1.065,VERIFIED, 0.014 vs M2's 0.060; calibration slope 1.065 vs 1.065; Brier equal to four decimal p
+SiM:line143,realdata.calib_slope.M1_logistic,analysis/canonical_results.json,1.06515,1.065,VERIFIED," M2's 0.060; calibration slope 1.065 vs 1.065; Brier equal to four decimal places), w"
+SiM:line145,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.05,VERIFIED,"reshold- and prevalence-dependence: $ $(0.05) was 0.003, 0.092, 0.003 and 0.008, and"
+SiM:line145,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.003,VERIFIED,"nd prevalence-dependence: $ $(0.05) was 0.003, 0.092, 0.003 and 0.008, and $ $(0.10) "
+SiM:line145,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,0.092,VERIFIED,"alence-dependence: $ $(0.05) was 0.003, 0.092, 0.003 and 0.008, and $ $(0.10) was 0.0"
+SiM:line145,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.003,VERIFIED,"dependence: $ $(0.05) was 0.003, 0.092, 0.003 and 0.008, and $ $(0.10) was 0.074, 0.0"
+SiM:line145,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.008,VERIFIED,": $ $(0.05) was 0.003, 0.092, 0.003 and 0.008, and $ $(0.10) was 0.074, 0.044, 0.074 "
+SiM:line145,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.10,VERIFIED," 0.003, 0.092, 0.003 and 0.008, and $ $(0.10) was 0.074, 0.044, 0.074 and 0.107, for"
+SiM:line145,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,0.074,VERIFIED,"092, 0.003 and 0.008, and $ $(0.10) was 0.074, 0.044, 0.074 and 0.107, for M1--M4 res"
+SiM:line145,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.044,VERIFIED,"003 and 0.008, and $ $(0.10) was 0.074, 0.044, 0.074 and 0.107, for M1--M4 respective"
+SiM:line145,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,0.074,VERIFIED," 0.008, and $ $(0.10) was 0.074, 0.044, 0.074 and 0.107, for M1--M4 respectively, and"
+SiM:line145,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.107,VERIFIED,"d $ $(0.10) was 0.074, 0.044, 0.074 and 0.107, for M1--M4 respectively, and the $ $-m"
+SiM:line145,realdata.brier.M1_logistic,analysis/canonical_results.json,0.0788376,0.12,VERIFIED,"ely, and the $ $-maximizing thresholds (0.12, 0.04, 0.12 and 0.15) differed from the"
+SiM:line145,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.04,VERIFIED,"nd the $ $-maximizing thresholds (0.12, 0.04, 0.12 and 0.15) differed from the net-b"
+SiM:line145,realdata.brier.M1_logistic,analysis/canonical_results.json,0.0788376,0.12,VERIFIED," $ $-maximizing thresholds (0.12, 0.04, 0.12 and 0.15) differed from the net-benefit"
+SiM:line145,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.15,VERIFIED,"mizing thresholds (0.12, 0.04, 0.12 and 0.15) differed from the net-benefit-maximizi"
+SiM:line145,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.099,VERIFIED, M1 and M2 attain the same maximum $ $ (0.099) at different thresholds and along diff
+SiM:line147,realdata.auc.M1_logistic,analysis/canonical_results.json,0.612546,0.651,VERIFIED,"emonstration. M4 attains a similar AUC (0.651; bootstrap difference vs M1 $0.038$, 95"
+SiM:line147,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.038,VERIFIED,"AUC (0.651; bootstrap difference vs M1 $0.038$, 95% CI $[0.028,0.047]$) yet its repre"
+SiM:line147,realdata.sens.M1_logistic@0.05,analysis/canonical_results.json,0.989936,95,VERIFIED,"51; bootstrap difference vs M1 $0.038$, 95% CI $[0.028,0.047]$) yet its representa"
+SiM:line147,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.028,VERIFIED,"trap difference vs M1 $0.038$, 95% CI $[0.028,0.047]$) yet its representation differs"
+SiM:line147,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.047,VERIFIED,"ifference vs M1 $0.038$, 95% CI $[0.028,0.047]$) yet its representation differs in lo"
+SiM:line147,realdata.calib_intercept.M4_gbm,analysis/canonical_results.json,0.40495,0.4,VERIFIED,"further into the mid-range ($s$ up to $ 0.4$), where the calibration curve $m(s)$ t"
+SiM:line147,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.15,VERIFIED,he low range but bends upward beyond $s 0.15$—miscalibration localized to the region
+SiM:line147,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.05,VERIFIED,"M1 and M4 are nearly equivalent at $p_t=0.05$ (difference $0.0007$, 95% CI $[0.0000,"
+SiM:line147,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.0007,VERIFIED,"y equivalent at $p_t=0.05$ (difference $0.0007$, 95% CI $[0.0000,0.0012]$) but M4 domi"
+SiM:line147,realdata.sens.M1_logistic@0.05,analysis/canonical_results.json,0.989936,95,VERIFIED,"ent at $p_t=0.05$ (difference $0.0007$, 95% CI $[0.0000,0.0012]$) but M4 dominates"
+SiM:line147,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.0000,VERIFIED,"_t=0.05$ (difference $0.0007$, 95% CI $[0.0000,0.0012]$) but M4 dominates at $p_t=0.10"
+SiM:line147,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.0012,VERIFIED,"$ (difference $0.0007$, 95% CI $[0.0000,0.0012]$) but M4 dominates at $p_t=0.10$ ($0.0"
+SiM:line147,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.10,VERIFIED,"0000,0.0012]$) but M4 dominates at $p_t=0.10$ ($0.0069$, 95% CI $[0.0047,0.0091]$), "
+SiM:line147,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.0069,VERIFIED,"012]$) but M4 dominates at $p_t=0.10$ ($0.0069$, 95% CI $[0.0047,0.0091]$), because th"
+SiM:line147,realdata.sens.M1_logistic@0.05,analysis/canonical_results.json,0.989936,95,VERIFIED,"t M4 dominates at $p_t=0.10$ ($0.0069$, 95% CI $[0.0047,0.0091]$), because the ext"
+SiM:line147,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.0047,VERIFIED,"nates at $p_t=0.10$ ($0.0069$, 95% CI $[0.0047,0.0091]$), because the extra discrimina"
+SiM:line147,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.0091,VERIFIED,"t $p_t=0.10$ ($0.0069$, 95% CI $[0.0047,0.0091]$), because the extra discrimination ma"
+SiM:line153,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,7.1,VERIFIED,"n makes visible.  ## 7. Extensions  ### 7.1 Multiclass outcomes  For $Y \{1, ,K\}$ "
+SiM:line157,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,7.2,VERIFIED,olded projections in the same way.  ### 7.2 Ordinal and continuous outcomes  For or
+SiM:line163,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,8.1,VERIFIED,binary-specific.  ## 8. Discussion  ### 8.1 Principal contribution and novelty boun
+SiM:line169,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,8.2,VERIFIED,ogy that reflects the mathematics.  ### 8.2 Two direct objections  Is this merely a
+SiM:line173,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,8.3,VERIFIED,er the same joint object{ehm2016}.  ### 8.3 Relationship to forecast verification  
+SiM:line177,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,8.4,VERIFIED,tisfies or replaces that guidance.  ### 8.4 Limitations  Limitations are real and w
+SiM:line181,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,8.5,VERIFIED,ly complex beyond binary outcomes.  ### 8.5 Implications for practice  For Statisti
+JCE:line9,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,30,VERIFIED,"ation to 71,518 hospital encounters for 30-day diabetes readmission compared four "
+JCE:line11,realdata.auc.M1_logistic,analysis/canonical_results.json,0.612546,0.613,VERIFIED, an identical area under the ROC curve (0.613) yet differed in calibration slope (1.0
+JCE:line11,realdata.calib_slope.M1_logistic,analysis/canonical_results.json,1.06515,1.07,VERIFIED,613) yet differed in calibration slope (1.07 vs 0.67) and net benefit; logit-scale r
+JCE:line11,realdata.auc.M4_gbm,analysis/canonical_results.json,0.65058,0.67,VERIFIED, differed in calibration slope (1.07 vs 0.67) and net benefit; logit-scale recalibra
+JCE:line11,realdata.auc.M1_logistic,analysis/canonical_results.json,0.612546,0.625,VERIFIED,"lity scale almost exactly (fitted slope 0.625, the theoretical value 1/k); and a natu"
+JCE:line61,realdata.spec.M1_logistic@0.1,analysis/canonical_results.json,0.776625,0.80,VERIFIED,io C draws a well-calibrated model (AUC 0.80) and applies a strictly increasing dist
+JCE:line61,realdata.spec.M4_gbm@0.1,analysis/canonical_results.json,0.734924,0.72,VERIFIED,onstructs two models with matched AUC (~0.72) whose class overlap sits mid-scale ver
+JCE:line63,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,30,VERIFIED,ected (Supplement).  ## 5. Application: 30-day hospital readmission  We applied th
+JCE:line65,realdata.n_encounters,analysis/canonical_results.json,101766,"101,766",VERIFIED,"tals dataset (UCI ML Repository ID 296; 101,766 inpatient encounters, 1999–2008){strack"
+JCE:line65,realdata.calib_slope.M2_distorted,analysis/canonical_results.json,0.66572,71,VERIFIED," to the first encounter per patient ($n=71{,}518$), the outcome was 30-day readmis"
+JCE:line65,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,30,VERIFIED,"patient ($n=71{,}518$), the outcome was 30-day readmission (prevalence 8.8%). Four"
+JCE:line65,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,8.8,VERIFIED,come was 30-day readmission (prevalence 8.8%). Four prespecified models were compar
+JCE:line67,realdata.auc.M1_logistic,analysis/canonical_results.json,0.612546,0.613,VERIFIED,.** M1 and M2 share an identical AUROC (0.613) yet diverge completely on the risk sca
+JCE:line67,realdata.auc.M4_gbm,analysis/canonical_results.json,0.65058,0.67,VERIFIED,"rd zero, its calibration slope drops to 0.67, and net benefit collapses at plausible"
+JCE:line67,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.040,VERIFIED,efit collapses at plausible thresholds (0.040 to 0.009 at 5%; bootstrap 95% CI for th
+JCE:line67,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.009,VERIFIED,apses at plausible thresholds (0.040 to 0.009 at 5%; bootstrap 95% CI for the differe
+JCE:line67,realdata.sens.M1_logistic@0.05,analysis/canonical_results.json,0.989936,95,VERIFIED,"sholds (0.040 to 0.009 at 5%; bootstrap 95% CI for the difference [0.027,0.035]). "
+JCE:line67,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.027,VERIFIED,"%; bootstrap 95% CI for the difference [0.027,0.035]). The Prediction Combs (Fig. 3) "
+JCE:line67,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.035,VERIFIED,"tstrap 95% CI for the difference [0.027,0.035]). The Prediction Combs (Fig. 3) show w"
+JCE:line69,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.000,VERIFIED,"—and does: the fitted recalibration is $0.000+0.625  (p_2)$ with $1/k=0.625$, making "
+JCE:line69,realdata.auc.M1_logistic,analysis/canonical_results.json,0.612546,0.625,VERIFIED,"oes: the fitted recalibration is $0.000+0.625  (p_2)$ with $1/k=0.625$, making M3 num"
+JCE:line69,realdata.auc.M1_logistic,analysis/canonical_results.json,0.612546,0.625,VERIFIED,"ation is $0.000+0.625  (p_2)$ with $1/k=0.625$, making M3 numerically almost identica"
+JCE:line69,realdata.calib_slope.M1_logistic,analysis/canonical_results.json,1.06515,1.065,VERIFIED,most identical to M1 (calibration slope 1.065 vs 1.065; Brier equal to four decimals)
+JCE:line69,realdata.calib_slope.M1_logistic,analysis/canonical_results.json,1.06515,1.065,VERIFIED,tical to M1 (calibration slope 1.065 vs 1.065; Brier equal to four decimals) while AU
+JCE:line69,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.003,VERIFIED, structure: $ $ varied with the cutoff (0.003 versus 0.092 at a 5% threshold for M1 a
+JCE:line69,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,0.092,VERIFIED, $ varied with the cutoff (0.003 versus 0.092 at a 5% threshold for M1 and M2 despite
+JCE:line69,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.04,VERIFIED," AUROC), the $ $-maximizing thresholds (0.04–0.15) differed from the net-benefit-fav"
+JCE:line69,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.15,VERIFIED,"C), the $ $-maximizing thresholds (0.04–0.15) differed from the net-benefit-favoring"
+JCE:line71,realdata.auc.M1_logistic,analysis/canonical_results.json,0.612546,0.651,VERIFIED,"nt model.** M4 attains a similar AUROC (0.651; bootstrap difference vs M1 0.038, 95% "
+JCE:line71,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.038,VERIFIED,"UROC (0.651; bootstrap difference vs M1 0.038, 95% CI [0.028,0.047]) yet its net-bene"
+JCE:line71,realdata.sens.M1_logistic@0.05,analysis/canonical_results.json,0.989936,95,VERIFIED,".651; bootstrap difference vs M1 0.038, 95% CI [0.028,0.047]) yet its net-benefit "
+JCE:line71,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.028,VERIFIED,"otstrap difference vs M1 0.038, 95% CI [0.028,0.047]) yet its net-benefit advantage i"
+JCE:line71,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.047,VERIFIED,"p difference vs M1 0.038, 95% CI [0.028,0.047]) yet its net-benefit advantage is loca"
+JCE:line71,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.0069,VERIFIED,"reshold but dominant at 10% (difference 0.0069, 95% CI [0.0047,0.0091]; Fig. 5), where"
+JCE:line71,realdata.sens.M1_logistic@0.05,analysis/canonical_results.json,0.989936,95,VERIFIED,"but dominant at 10% (difference 0.0069, 95% CI [0.0047,0.0091]; Fig. 5), where the"
+JCE:line71,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.0047,VERIFIED,"nant at 10% (difference 0.0069, 95% CI [0.0047,0.0091]; Fig. 5), where the boosted mod"
+JCE:line71,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.0091,VERIFIED," 10% (difference 0.0069, 95% CI [0.0047,0.0091]; Fig. 5), where the boosted model's ex"
+JCE:line75,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,6.1,VERIFIED,oes not provide.  ## 6. Discussion  ### 6.1 Principal findings  Evaluation domains 
+JCE:line79,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,6.2,VERIFIED,e outcomes and predictions differ.  ### 6.2 Is this merely a restatement of class-c
+JCE:line83,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,6.3,VERIFIED, what each familiar summary loses.  ### 6.3 Why not simply report everything separa
+JCE:line87,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,6.4,VERIFIED,of AUROC as overall model quality.  ### 6.4 Prediction versus decision  The accepta
+JCE:line91,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,6.5,VERIFIED,nsequences or patient preferences.  ### 6.5 Relationship to existing methods  The f
+JCE:line95,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,6.6,VERIFIED,s reduced to individual summaries.  ### 6.6 How to use the framework  A clinical re
+JCE:line99,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,6.7,VERIFIED,prediction–outcome representation.  ### 6.7 Strengths and limitations  Strengths in
+JCE:line103,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,6.8,VERIFIED,ed in different clinical contexts.  ### 6.8 Generalizability  The framework is mode
+Supp:line72,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,20,VERIFIED,"numpy.random.default_rng(20261006)`; $n=20{,}000$ per scenario unless stated. Scen"
+Supp:line73,realdata.sens.M4_gbm@0.1,analysis/canonical_results.json,0.480403,50,VERIFIED,scenario unless stated. Scenario J uses 50 replicates per $n$.  - A: $Y  (0.3)$; $
+Supp:line75,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,0.3,VERIFIED," uses 50 replicates per $n$.  - A: $Y  (0.3)$; $S  Y=1  (60,1.2)$,   $S  Y=0  (1.2,"
+Supp:line75,realdata.auc.M1_logistic,analysis/canonical_results.json,0.612546,60,VERIFIED,"es per $n$.  - A: $Y  (0.3)$; $S  Y=1  (60,1.2)$,   $S  Y=0  (1.2,60)$. - B: $Y  ("
+Supp:line75,realdata.calib_slope.M4_gbm,analysis/canonical_results.json,1.18235,1.2,VERIFIED,"per $n$.  - A: $Y  (0.3)$; $S  Y=1  (60,1.2)$,   $S  Y=0  (1.2,60)$. - B: $Y  (0.3)"
+Supp:line76,realdata.calib_slope.M4_gbm,analysis/canonical_results.json,1.18235,1.2,VERIFIED,"(0.3)$; $S  Y=1  (60,1.2)$,   $S  Y=0  (1.2,60)$. - B: $Y  (0.3)$; $S  U(0,1)$ inde"
+Supp:line76,realdata.auc.M1_logistic,analysis/canonical_results.json,0.612546,60,VERIFIED,")$; $S  Y=1  (60,1.2)$,   $S  Y=0  (1.2,60)$. - B: $Y  (0.3)$; $S  U(0,1)$ indepen"
+Supp:line77,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,0.3,VERIFIED,",1.2)$,   $S  Y=0  (1.2,60)$. - B: $Y  (0.3)$; $S  U(0,1)$ independent. - C: $p= ( "
+Supp:line78,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,0.3,VERIFIED," $S  U(0,1)$ independent. - C: $p= (  \,0.3/0.7+1.4x)$, $x  N(0,1)$,   $y  (p)$; se"
+Supp:line78,realdata.auc.M4_gbm,analysis/canonical_results.json,0.65058,0.7,VERIFIED," U(0,1)$ independent. - C: $p= (  \,0.3/0.7+1.4x)$, $x  N(0,1)$,   $y  (p)$; second"
+Supp:line78,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,1.4,VERIFIED,",1)$ independent. - C: $p= (  \,0.3/0.7+1.4x)$, $x  N(0,1)$,   $y  (p)$; second mod"
+Supp:line80,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,0.3,VERIFIED,"$. - D1: $f_0= (3,4)$, $f_1= (4,3)$, $ =0.3$.   D2: $f_0=0.8\, (2.5,5)+0.2\, (5,2)$"
+Supp:line81,realdata.spec.M1_logistic@0.1,analysis/canonical_results.json,0.776625,0.8,VERIFIED,",4)$, $f_1= (4,3)$, $ =0.3$.   D2: $f_0=0.8\, (2.5,5)+0.2\, (5,2)$;   $f_1=0.2\, (2"
+Supp:line81,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,2.5,VERIFIED,"f_1= (4,3)$, $ =0.3$.   D2: $f_0=0.8\, (2.5,5)+0.2\, (5,2)$;   $f_1=0.2\, (2,5)+0.8"
+Supp:line82,realdata.spec.M1_logistic@0.1,analysis/canonical_results.json,0.776625,0.8,VERIFIED,"2.5,5)+0.2\, (5,2)$;   $f_1=0.2\, (2,5)+0.8\, (5,2.5)$. - E: two calibrated logisti"
+Supp:line82,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,2.5,VERIFIED,"2\, (5,2)$;   $f_1=0.2\, (2,5)+0.8\, (5,2.5)$. - E: two calibrated logistic models "
+Supp:line83,realdata.recal.k,analysis/canonical_results.json,1.6,1.6,VERIFIED," calibrated logistic models with slopes 1.6 and 0.6. - F: $\{f_0,f_1\}=\{ (2.5,5), "
+Supp:line83,realdata.auc.M1_logistic,analysis/canonical_results.json,0.612546,0.6,VERIFIED,"ted logistic models with slopes 1.6 and 0.6. - F: $\{f_0,f_1\}=\{ (2.5,5), (5,2.5)\"
+Supp:line84,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,2.5,VERIFIED,"opes 1.6 and 0.6. - F: $\{f_0,f_1\}=\{ (2.5,5), (5,2.5)\}$ fixed;   $  \{0.05,0.20,"
+Supp:line84,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,2.5,VERIFIED,"d 0.6. - F: $\{f_0,f_1\}=\{ (2.5,5), (5,2.5)\}$ fixed;   $  \{0.05,0.20,0.50\}$. - "
+Supp:line85,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.20,VERIFIED," (2.5,5), (5,2.5)\}$ fixed;   $  \{0.05,0.20,0.50\}$. - G: source as C; target with "
+Supp:line85,realdata.sens.M4_gbm@0.1,analysis/canonical_results.json,0.480403,0.50,VERIFIED,",5), (5,2.5)\}$ fixed;   $  \{0.05,0.20,0.50\}$. - G: source as C; target with covar"
+Supp:line86,realdata.calib_intercept.M4_gbm,analysis/canonical_results.json,0.40495,0.4,VERIFIED,"s C; target with covariate shift $x'  N(0.4,1.1)$,   model scores evaluated without"
+Supp:line86,realdata.calib_slope.M1_logistic,analysis/canonical_results.json,1.06515,1.1,VERIFIED," target with covariate shift $x'  N(0.4,1.1)$,   model scores evaluated without rec"
+Supp:line89,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,0.30,VERIFIED,"separates densities within the band   $[0.30,0.45]$ only. - I: as F with $ =0.02$. -"
+Supp:line89,realdata.calib_intercept.M4_gbm,analysis/canonical_results.json,0.40495,0.45,VERIFIED,"ates densities within the band   $[0.30,0.45]$ only. - I: as F with $ =0.02$. - J: r"
+Supp:line93,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,15,VERIFIED,"0000\}$; compares ECDF, histogram   ($B=15$), and logit-scale KDE for density esti"
+Supp:line98,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,30,VERIFIED," preprocessing  Outcome: `readmitted==""<30""`. Cohort: first encounter per `patient"
+Supp:line100,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,8.8,VERIFIED,"nter_id` (71,518 encounters; prevalence 8.8%). Predictors: age (ordinal decile), ti"
+Supp:line104,realdata.auc.M4_gbm,analysis/canonical_results.json,0.65058,70,VERIFIED,"ype_id, admission_source_id. Stratified 70/30 split, seed 20261006. M1: $L_2$-pena"
+Supp:line104,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,30,VERIFIED,"_id, admission_source_id. Stratified 70/30 split, seed 20261006. M1: $L_2$-penaliz"
+Supp:line106,realdata.recal.k,analysis/canonical_results.json,1.6,1.6,VERIFIED,ession ($C=1$). M2: $g$-transform at $k=1.6$ of M1 probabilities (designed non-iden
+Supp:line108,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.000,VERIFIED,"he training fold only (fitted intercept 0.000, slope 0.625, exactly $1/k$). M4: histo"
+Supp:line109,realdata.auc.M1_logistic,analysis/canonical_results.json,0.612546,0.625,VERIFIED,"old only (fitted intercept 0.000, slope 0.625, exactly $1/k$). M4: histogram-based gr"
+Supp:line130,realdata.ppv.M2_distorted@0.05,analysis/canonical_results.json,0.187101,21,VERIFIED,"  *Real-data values.* Held-out fold ($n=21{,}456$, prevalence 0.088); threshold gr"
+Supp:line130,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,0.088,VERIFIED,"Held-out fold ($n=21{,}456$, prevalence 0.088); threshold grid $t [0.005,0.30]$.  - M"
+Supp:line131,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.005,VERIFIED,", prevalence 0.088); threshold grid $t [0.005,0.30]$.  - M1 logistic: $ (0.05)=0.003$"
+Supp:line131,realdata.logloss.M1_logistic,analysis/canonical_results.json,0.290568,0.30,VERIFIED,"alence 0.088); threshold grid $t [0.005,0.30]$.  - M1 logistic: $ (0.05)=0.003$, $ ("
+Supp:line133,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.05,VERIFIED,"id $t [0.005,0.30]$.  - M1 logistic: $ (0.05)=0.003$, $ (0.10)=0.074$,   $ (0.20)=0."
+Supp:line133,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.003,VERIFIED,"[0.005,0.30]$.  - M1 logistic: $ (0.05)=0.003$, $ (0.10)=0.074$,   $ (0.20)=0.046$; $"
+Supp:line133,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.10,VERIFIED,"]$.  - M1 logistic: $ (0.05)=0.003$, $ (0.10)=0.074$,   $ (0.20)=0.046$; $ _t =0.099"
+Supp:line133,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,0.074,VERIFIED," M1 logistic: $ (0.05)=0.003$, $ (0.10)=0.074$,   $ (0.20)=0.046$; $ _t =0.099$ at $t"
+Supp:line134,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.20,VERIFIED," $ (0.05)=0.003$, $ (0.10)=0.074$,   $ (0.20)=0.046$; $ _t =0.099$ at $t=0.12$. - M2"
+Supp:line134,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.046,VERIFIED,"05)=0.003$, $ (0.10)=0.074$,   $ (0.20)=0.046$; $ _t =0.099$ at $t=0.12$. - M2 distor"
+Supp:line134,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.099,VERIFIED,"(0.10)=0.074$,   $ (0.20)=0.046$; $ _t =0.099$ at $t=0.12$. - M2 distorted: $ (0.02)="
+Supp:line134,realdata.brier.M1_logistic,analysis/canonical_results.json,0.0788376,0.12,VERIFIED,",   $ (0.20)=0.046$; $ _t =0.099$ at $t=0.12$. - M2 distorted: $ (0.02)=0.052$, $ (0"
+Supp:line135,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,0.052,VERIFIED,"$ at $t=0.12$. - M2 distorted: $ (0.02)=0.052$, $ (0.05)=0.092$,   $ (0.10)=0.044$; $"
+Supp:line135,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.05,VERIFIED,"2$. - M2 distorted: $ (0.02)=0.052$, $ (0.05)=0.092$,   $ (0.10)=0.044$; $ _t =0.099"
+Supp:line135,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,0.092,VERIFIED,"M2 distorted: $ (0.02)=0.052$, $ (0.05)=0.092$,   $ (0.10)=0.044$; $ _t =0.099$ at $t"
+Supp:line136,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.10,VERIFIED," $ (0.02)=0.052$, $ (0.05)=0.092$,   $ (0.10)=0.044$; $ _t =0.099$ at $t=0.04$. - M3"
+Supp:line136,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.044,VERIFIED,"02)=0.052$, $ (0.05)=0.092$,   $ (0.10)=0.044$; $ _t =0.099$ at $t=0.04$. - M3 recali"
+Supp:line136,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.099,VERIFIED,"(0.05)=0.092$,   $ (0.10)=0.044$; $ _t =0.099$ at $t=0.04$. - M3 recalibrated: $ (0.0"
+Supp:line136,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.04,VERIFIED,",   $ (0.10)=0.044$; $ _t =0.099$ at $t=0.04$. - M3 recalibrated: $ (0.05)=0.003$, $"
+Supp:line137,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.05,VERIFIED,"099$ at $t=0.04$. - M3 recalibrated: $ (0.05)=0.003$, $ (0.10)=0.074$,   $ (0.20)=0."
+Supp:line137,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.003,VERIFIED,"t $t=0.04$. - M3 recalibrated: $ (0.05)=0.003$, $ (0.10)=0.074$,   $ (0.20)=0.046$; $"
+Supp:line137,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.10,VERIFIED," - M3 recalibrated: $ (0.05)=0.003$, $ (0.10)=0.074$,   $ (0.20)=0.046$; $ _t =0.099"
+Supp:line137,boot.auc.M4_gbm-M1_logistic.hi,analysis/canonical_results.json,0.0473247,0.074,VERIFIED,"recalibrated: $ (0.05)=0.003$, $ (0.10)=0.074$,   $ (0.20)=0.046$; $ _t =0.099$ at $t"
+Supp:line138,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.20,VERIFIED," $ (0.05)=0.003$, $ (0.10)=0.074$,   $ (0.20)=0.046$; $ _t =0.099$ at $t=0.12$ (M1's"
+Supp:line138,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.046,VERIFIED,"05)=0.003$, $ (0.10)=0.074$,   $ (0.20)=0.046$; $ _t =0.099$ at $t=0.12$ (M1's curve "
+Supp:line138,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.099,VERIFIED,"(0.10)=0.074$,   $ (0.20)=0.046$; $ _t =0.099$ at $t=0.12$ (M1's curve   restored to "
+Supp:line138,realdata.brier.M1_logistic,analysis/canonical_results.json,0.0788376,0.12,VERIFIED,",   $ (0.20)=0.046$; $ _t =0.099$ at $t=0.12$ (M1's curve   restored to within $10^{"
+Supp:line140,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.05,VERIFIED," $10^{-3}$). - M4 gradient boosting: $ (0.05)=0.008$, $ (0.10)=0.107$,   $ (0.20)=0."
+Supp:line140,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.008,VERIFIED,"-3}$). - M4 gradient boosting: $ (0.05)=0.008$, $ (0.10)=0.107$,   $ (0.20)=0.110$; $"
+Supp:line140,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.10,VERIFIED," gradient boosting: $ (0.05)=0.008$, $ (0.10)=0.107$,   $ (0.20)=0.110$; $ _t =0.153"
+Supp:line140,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.107,VERIFIED,"ent boosting: $ (0.05)=0.008$, $ (0.10)=0.107$,   $ (0.20)=0.110$; $ _t =0.153$ at $t"
+Supp:line141,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.20,VERIFIED," $ (0.05)=0.008$, $ (0.10)=0.107$,   $ (0.20)=0.110$; $ _t =0.153$ at $t=0.15$.  The"
+Supp:line141,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.110,VERIFIED,"05)=0.008$, $ (0.10)=0.107$,   $ (0.20)=0.110$; $ _t =0.153$ at $t=0.15$.  The net-be"
+Supp:line141,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.153,VERIFIED,"(0.10)=0.107$,   $ (0.20)=0.110$; $ _t =0.153$ at $t=0.15$.  The net-benefit-maximizi"
+Supp:line141,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.15,VERIFIED,",   $ (0.20)=0.110$; $ _t =0.153$ at $t=0.15$.  The net-benefit-maximizing threshold"
+Supp:line144,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.005,VERIFIED,n the same grid lies at the boundary $t=0.005$ for all four models (net benefit rewar
+Supp:line147,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.04,VERIFIED, thresholds are interior points between 0.04 and 0.15: the two criteria optimize dif
+Supp:line147,realdata.calib_intercept.M1_logistic,analysis/canonical_results.json,0.15179,0.15,VERIFIED,ds are interior points between 0.04 and 0.15: the two criteria optimize different th
+Supp:line149,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.099,VERIFIED,. M1 and M2 share the same maximum $ $ (0.099) but attain it at different thresholds 
+Supp:line153,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,0.05,VERIFIED,$ for M1--M4 with reference lines at $t=0.05$ and $t=0.10$.  *Multiclass / ordinal n
+Supp:line153,realdata.ICI.M2_distorted,analysis/canonical_results.json,0.0601165,0.10,VERIFIED,with reference lines at $t=0.05$ and $t=0.10$.  *Multiclass / ordinal note.* For $Y 
+Supp:line163,boot.auc.M1_logistic-M2_distorted.hi,analysis/canonical_results.json,0,3.10,VERIFIED,"# S5. Computational environment  Python 3.10; numpy, pandas, scipy, scikit-learn, st"

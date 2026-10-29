@@ -3,12 +3,14 @@ fills, no decorative elements."""
 
 import os, sys
 import numpy as np
+import pandas as pd
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, os.path.dirname(__file__))
 from oprep import EmpiricalOPR, g_transform
+from prediction_comb import compute_prediction_comb, plot_prediction_comb
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FIG = os.path.join(ROOT, "figures")
@@ -127,7 +129,7 @@ fig, axs = plt.subplots(1, 2, figsize=(7.0, 2.9))
 opr_panel(axs[0], d["y_mid_overlap"], d["s_mid_overlap"], show_m=False, label="Mid-scale overlap")
 opr_panel(axs[1], d["y_tail_overlap"], d["s_tail_overlap"], show_m=False, label="Tail-located overlap")
 fig.tight_layout()
-savefig(fig, "FIGURE_4")
+savefig(fig, "FIGURE_5")
 
 # ---- Figure 5: F + G — prevalence & transport ---------------------
 fig, axs = plt.subplots(1, 3, figsize=(8.2, 2.9))
@@ -162,15 +164,16 @@ ax.axvspan(0.30, 0.45, color="0.9")
 ax.set_xlabel("Threshold probability pt"); ax.set_ylabel("Net benefit")
 ax.set_title("H. Net benefit differs locally"); ax.legend(frameon=False)
 fig.tight_layout()
-savefig(fig, "FIGURE_5")
+savefig(fig, "FIGURE_6")
 
 # ---- Figure 6: real application ------------------------------------
 d = np.load(os.path.join(ROOT, "data/processed/realdata_scores.npz"))
 y = d["y"]
-fig, axs = plt.subplots(2, 3, figsize=(8.4, 5.4))
+fig, axs = plt.subplots(2, 4, figsize=(10.4, 5.4))
 for j, (key, lab) in enumerate([("s_M1_logistic", "M1 logistic"),
                                 ("s_M2_distorted", "M2 distorted"),
-                                ("s_M3_recalibrated", "M3 recalibrated")]):
+                                ("s_M3_recalibrated", "M3 recalibrated"),
+                                ("s_M4_gbm", "M4 gradient boosting")]):
     s = d[key]
     e = EmpiricalOPR(y, s)
     opr_panel(axs[0, j], y, s, bw=0.05, label=lab)
@@ -187,14 +190,15 @@ for j, (key, lab) in enumerate([("s_M1_logistic", "M1 logistic"),
     axs[1, j].set_xlim(0, xmax); axs[1, j].set_ylim(0, xmax)
     axs[1, j].set_xlabel("s"); axs[1, j].set_ylabel("m(s)")
 fig.tight_layout()
-savefig(fig, "FIGURE_7")
+savefig(fig, "FIGURE_8")
 
 # decision curves for real data
 fig, ax = plt.subplots(figsize=(4.6, 3.2))
 pts = np.linspace(0.01, 0.30, 200)
 for key, ls, lab in [("s_M1_logistic", "-", "M1 logistic"),
                      ("s_M2_distorted", "--", "M2 distorted"),
-                     ("s_M3_recalibrated", ":", "M3 recalibrated")]:
+                     ("s_M3_recalibrated", ":", "M3 recalibrated"),
+                     ("s_M4_gbm", "-.", "M4 gradient boosting")]:
     e = EmpiricalOPR(y, d[key])
     ax.plot(pts, [e.net_benefit(p) for p in pts], ls, color="black", lw=1.1, label=lab)
 prev = y.mean()
@@ -204,7 +208,7 @@ ax.axhline(0, color="0.6", lw=0.8)
 ax.set_xlabel("Threshold probability pt"); ax.set_ylabel("Net benefit")
 ax.set_ylim(-0.02, 0.10); ax.legend(frameon=False)
 fig.tight_layout()
-savefig(fig, "FIGURE_8")
+savefig(fig, "FIGURE_9")
 
 # ---- Figure 8: finite-sample estimator behaviour ------------------
 fs = __import__("pandas").read_csv(os.path.join(ROOT, "analysis/finite_sample.csv"))
@@ -228,6 +232,85 @@ axs[2].axhline(0.1372, color="0.6", ls="--", lw=0.8)
 axs[2].set_xscale("log"); axs[2].set_xlabel("n"); axs[2].set_ylabel("Brier")
 axs[2].set_title("Brier stability")
 fig.tight_layout()
-savefig(fig, "FIGURE_6")
+savefig(fig, "FIGURE_7")
+
+# ---- Figure 9: the Prediction Comb and its derived evaluation views --
+# Central graphical display: outcome-specific teeth on the original
+# prediction scale; ROC, calibration and net benefit as derived views.
+d = P("C_same_roc_diff_calib")
+y_c, s_c = d["y_calibrated"], d["s_calibrated"]
+e_c = EmpiricalOPR(y_c, s_c)
+fig, axs = plt.subplots(1, 4, figsize=(11.0, 3.0))
+plot_prediction_comb(axs[0], y_c, s_c, n_bins=60, thresholds=[0.5],
+                     label="A. Prediction Comb")
+axs[0].text(0.52, axs[0].get_ylim()[1] * 0.9, "t=0.5", fontsize=7)
+fpr, tpr = e_c.roc()
+axs[1].plot(fpr, tpr, "k-", lw=1.0)
+axs[1].plot([0, 1], [0, 1], color="0.7", lw=0.6)
+axs[1].set_xlabel("FPR"); axs[1].set_ylabel("TPR")
+axs[1].set_title("B. ROC (rank-based projection)")
+axs[2].plot(GRID, e_c.calib_m(GRID, 0.08), "k-", lw=1.0)
+axs[2].plot([0, 1], [0, 1], color="0.7", lw=0.6)
+axs[2].set_xlabel("s"); axs[2].set_ylabel("m(s)")
+axs[2].set_title("C. Calibration view")
+pts = np.linspace(0.01, 0.6, 150)
+prev = y_c.mean()
+axs[3].plot(pts, [e_c.net_benefit(p) for p in pts], "k-", lw=1.0)
+axs[3].plot(pts, prev - (1 - prev) * pts / (1 - pts), color="0.6", lw=0.8)
+axs[3].axhline(0, color="0.6", lw=0.8)
+axs[3].set_xlabel("Threshold probability pt"); axs[3].set_ylabel("Net benefit")
+axs[3].set_ylim(-0.15, 0.35)
+axs[3].set_title("D. Decision-analytic view")
+fig.tight_layout()
+savefig(fig, "FIGURE_4")
+
+# ---- Figure 10: Prediction Combs for M1, M2, M3 (real data) ---------
+d = np.load(os.path.join(ROOT, "data/processed/realdata_scores.npz"))
+y = d["y"]
+keys = [("s_M1_logistic", "M1 logistic"),
+        ("s_M2_distorted", "M2 logit-scale distortion"),
+        ("s_M3_recalibrated", "M3 logit-scale recalibration")]
+# Full [0,1] scale: no probability mass is silently dropped outside an
+# arbitrary display window; the comb keeps the original risk scale.
+edges_r = np.linspace(0.0, 1.0, 81)
+ymax = max(compute_prediction_comb(y, d[k], edges=edges_r)["h1"].max()
+           for k, _ in keys) * 1.1
+fig, axs = plt.subplots(1, 3, figsize=(9.6, 3.0))
+for j, (key, lab) in enumerate(keys):
+    plot_prediction_comb(axs[j], y, d[key], edges=edges_r,
+                         thresholds=[0.05], ymax=ymax, label=lab)
+    axs[j].text(0.052, ymax * 0.92, "t=0.05", fontsize=7)
+fig.tight_layout()
+savefig(fig, "FIGURE_10")
+
+# ---- Figure 11: Prediction Combs M1 vs M4 ---------------------------
+fig, axs = plt.subplots(1, 2, figsize=(7.0, 3.0))
+for j, (key, lab) in enumerate([("s_M1_logistic", "M1 logistic"),
+                                ("s_M4_gbm", "M4 gradient boosting")]):
+    plot_prediction_comb(axs[j], y, d[key], edges=edges_r,
+                         thresholds=[0.05], ymax=ymax, label=lab)
+    axs[j].text(0.052, ymax * 0.92, "t=0.05", fontsize=7)
+fig.tight_layout()
+savefig(fig, "FIGURE_11")
+
+# ---- Supplement figure: Cohen's kappa curves kappa(t) for M1-M4 ------
+# Downstream agreement functional: computed only after a threshold is
+# applied; agreement-optimal threshold != clinically optimal threshold.
+kc = pd.read_csv(os.path.join(ROOT, "analysis/kappa_curves.csv"))
+fig, axs = plt.subplots(1, 1, figsize=(4.8, 3.4))
+styles = [("M1_logistic", "k-", "M1 logistic"),
+          ("M2_distorted", "k--", "M2 logit-scale distortion"),
+          ("M3_recalibrated", "k:", "M3 logit-scale recalibration"),
+          ("M4_gbm", "k-.", "M4 gradient boosting")]
+for col, st, lab in styles:
+    axs.plot(kc["t"], kc[col], st, lw=1.0, label=lab)
+for t in (0.05, 0.10):
+    axs.axvline(t, color="0.7", lw=0.6)
+axs.set_xlabel("Threshold t")
+axs.set_ylabel("Cohen's $\\kappa$(t)")
+axs.set_xlim(0.005, 0.30)
+axs.legend(fontsize=7, frameon=False)
+fig.tight_layout()
+savefig(fig, "FIGURE_S_KAPPA")
 
 print("done")
